@@ -111,8 +111,8 @@ private fun LeanbackClassicPanelScreenWrapper(
             modifier = Modifier
                 .pointerInput(Unit) { detectTapGestures(onTap = { }) }
                 .padding(
-                    top = childPadding.top,
-                    start = childPadding.start,
+                    top = 0.dp,
+                    start = 0.dp,
                     bottom = childPadding.bottom,
                     end = childPadding.end,
                 )
