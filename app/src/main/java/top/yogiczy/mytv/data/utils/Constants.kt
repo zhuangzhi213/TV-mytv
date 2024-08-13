@@ -18,7 +18,8 @@ object Constants {
      * IPTV源地址
      */
     const val IPTV_SOURCE_URL =
-        "https://mirror.ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
+        "https://tv.mybacc.com/tv/"
+        // "https://mirror.ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
 
     /**
      * IPTV源缓存时间（毫秒）
