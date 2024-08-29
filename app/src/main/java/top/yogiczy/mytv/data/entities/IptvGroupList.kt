@@ -9,6 +9,7 @@ import androidx.compose.runtime.Immutable
 data class IptvGroupList(
     val value: List<IptvGroup> = emptyList(),
 ) : List<IptvGroup> by value {
+
     companion object {
         val EXAMPLE = IptvGroupList(List(5) { groupIdx ->
             IptvGroup(

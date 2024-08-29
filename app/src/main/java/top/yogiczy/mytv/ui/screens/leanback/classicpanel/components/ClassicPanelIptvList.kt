@@ -4,6 +4,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -30,6 +32,7 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -210,7 +213,18 @@ private fun LeanbackClassicPanelIptvItem(
                 selected = isSelectedProvider(),
                 onClick = { },
                 headlineContent = {
-                    Text(text = iptv.name, maxLines = 2)
+                    Row{
+                        Text(text = iptv.id.toString(), maxLines = 2)
+                        Box(modifier = Modifier.padding(horizontal = 4.dp)) {
+                            Spacer(
+                                modifier = Modifier
+                                    .background(Color.White)
+                                    // .width(1.dp)
+                                    // .height(20.dp),
+                            )
+                        }
+                        Text(text = iptv.name, maxLines = 2)
+                    }
                 },
                 supportingContent = {
                     Text(

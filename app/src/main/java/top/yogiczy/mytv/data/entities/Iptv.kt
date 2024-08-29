@@ -2,6 +2,14 @@ package top.yogiczy.mytv.data.entities
 
 import androidx.compose.runtime.Immutable
 
+import java.util.concurrent.atomic.AtomicInteger
+
+object IdGenerator {
+    private val counter = AtomicInteger(-1)
+
+    fun generateId(): String = counter.incrementAndGet().toString()
+}
+
 /**
  * 直播源
  */
@@ -11,6 +19,11 @@ data class Iptv(
      * 直播源名称
      */
     val name: String = "",
+
+    /**
+     * 直播源ID
+     */
+    val id: String = IdGenerator.generateId(), // 使用序号生成 ID
 
     /**
      * 频道名称，用于查询节目单

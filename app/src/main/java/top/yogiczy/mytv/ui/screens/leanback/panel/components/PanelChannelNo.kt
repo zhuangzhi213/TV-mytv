@@ -25,7 +25,7 @@ fun LeanbackPanelChannelNo(
 private fun LeanbackPanelChannelNoPreview() {
     LeanbackTheme {
         LeanbackPanelChannelNo(
-            channelNoProvider = { "01" }
+            channelNoProvider = { "102" }
         )
     }
 }
