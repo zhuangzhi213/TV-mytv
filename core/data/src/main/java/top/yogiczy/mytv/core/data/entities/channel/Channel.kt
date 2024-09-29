@@ -1,12 +1,22 @@
 package top.yogiczy.mytv.core.data.entities.channel
 
 import androidx.compose.runtime.Immutable
+import java.util.concurrent.atomic.AtomicInteger
 
+object IdGenerator {
+    private val counter = AtomicInteger(-1)
+
+    fun generateId(): String = counter.incrementAndGet().toString()
+}
 /**
  * 频道
  */
 @Immutable
 data class Channel(
+    /**
+     * 直播源ID
+     */
+    val id: String = IdGenerator.generateId(), // 使用序号生成 ID
     /**
      * 频道名称
      */

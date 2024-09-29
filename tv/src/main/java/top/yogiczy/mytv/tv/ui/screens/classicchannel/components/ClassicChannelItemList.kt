@@ -6,9 +6,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -31,6 +33,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.focusRestorer
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -209,11 +212,24 @@ private fun ClassicChannelItem(
                 selected = isSelectedProvider(),
                 onClick = {},
                 headlineContent = {
-                    Text(
-                        channel.name,
-                        maxLines = 1,
-                        modifier = Modifier.ifElse(isFocused, Modifier.basicMarquee()),
-                    )
+                    Row{
+                        Text(text = channel.id, maxLines = 1,
+                            modifier = Modifier.padding(top = 4.dp))
+                        Box(modifier = Modifier.padding(horizontal = 4.dp)) {
+                            Spacer(
+                                modifier = Modifier
+                                    .background(Color.White)
+                                // .width(1.dp)
+                                // .height(20.dp),
+                            )
+                        }
+                        Text(
+                            channel.name,
+                            maxLines = 1,
+                            modifier = Modifier.ifElse(isFocused, Modifier.basicMarquee()),
+                        )
+                    }
+
                 },
                 supportingContent = {
                     Text(
