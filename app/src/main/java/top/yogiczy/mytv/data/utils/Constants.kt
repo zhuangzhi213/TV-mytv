@@ -30,7 +30,7 @@ object Constants {
      * 节目单XML地址
      */
     // const val EPG_XML_URL = "http://epg.51zmt.top:8000/e.xml.gz"
-    const val EPG_XML_URL = "http://iptv.mybacc.com/e.xml.gz"
+    const val EPG_XML_URL = "https://iptv.mybacc.com/e.xml.gz"
 
     /**
      * 节目单刷新时间阈值（小时）

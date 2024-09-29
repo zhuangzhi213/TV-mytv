@@ -1,5 +1,9 @@
 <component name="ProjectCodeStyleConfiguration">
   <state>
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+<<<<<<< HEAD
+=======
+    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default" />
+>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88
   </state>
 </component>

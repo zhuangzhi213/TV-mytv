@@ -1,8 +1,11 @@
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/Logger.kt
 package top.yogiczy.mytv.utils
+========
+package top.yogiczy.mytv.core.data.utils
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/data/src/main/java/top/yogiczy/mytv/core/data/utils/Logger.kt
 
 import android.util.Log
 import kotlinx.serialization.Serializable
-import top.yogiczy.mytv.data.utils.Constants
 
 /**
  * 日志工具类
@@ -12,7 +15,11 @@ class Logger private constructor(
 ) {
     fun d(message: String, throwable: Throwable? = null) {
         Log.d(tag, message, throwable)
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/Logger.kt
         // addHistoryItem(HistoryItem(LevelType.DEBUG, tag, message, throwable?.message))
+========
+        addHistoryItem(HistoryItem(LevelType.DEBUG, tag, message, throwable?.message))
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/data/src/main/java/top/yogiczy/mytv/core/data/utils/Logger.kt
     }
 
     fun i(message: String, throwable: Throwable? = null) {
@@ -38,13 +45,17 @@ class Logger private constructor(
     companion object {
         fun create(tag: String) = Logger(tag)
 
-        private val _history = mutableListOf<HistoryItem>()
+        private var _history = mutableListOf<HistoryItem>()
         val history: List<HistoryItem>
             get() = _history
 
         fun addHistoryItem(item: HistoryItem) {
-            _history.add(item)
-            if (_history.size > Constants.LOG_HISTORY_MAX_SIZE) _history.removeAt(0)
+            if (listOf(LevelType.INFO, LevelType.WARN, LevelType.ERROR).contains(item.level)) {
+                _history.add(item)
+                if (_history.size > Constants.LOG_HISTORY_MAX_SIZE) {
+                    _history = _history.takeLast(Constants.LOG_HISTORY_MAX_SIZE).toMutableList()
+                }
+            }
         }
     }
 

@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/activities/LeanbackActivity.kt
 package top.yogiczy.mytv.activities
+========
+package top.yogiczy.mytv.tv
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:tv/src/main/java/top/yogiczy/mytv/tv/MainActivity.kt
 
 import android.app.PictureInPictureParams
 import android.os.Build
@@ -8,14 +12,12 @@ import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/activities/LeanbackActivity.kt
 import top.yogiczy.mytv.ui.LeanbackApp
 import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
 import top.yogiczy.mytv.ui.theme.LeanbackTheme
@@ -36,11 +38,20 @@ class LeanbackActivity : ComponentActivity() {
         super.onUserLeaveHint()
     }
 
+========
+import androidx.tv.material3.Surface
+import top.yogiczy.mytv.tv.ui.App
+import top.yogiczy.mytv.tv.ui.theme.MyTVTheme
+import top.yogiczy.mytv.tv.utlis.HttpServer
+import kotlin.system.exitProcess
+
+class MainActivity : ComponentActivity() {
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:tv/src/main/java/top/yogiczy/mytv/tv/MainActivity.kt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
-            // 隐藏状态栏、导航栏
             WindowCompat.setDecorFitsSystemWindows(window, false)
             WindowCompat.getInsetsController(window, window.decorView).let { insetsController ->
                 insetsController.hide(WindowInsetsCompat.Type.statusBars())
@@ -52,13 +63,9 @@ class LeanbackActivity : ComponentActivity() {
             // 屏幕常亮
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
-            LeanbackTheme {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.background),
-                ) {
-                    LeanbackApp(
+            MyTVTheme {
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    App(
                         onBackPressed = {
                             finish()
                             exitProcess(0)

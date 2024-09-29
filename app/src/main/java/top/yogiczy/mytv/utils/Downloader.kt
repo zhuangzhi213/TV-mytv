@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/Downloader.kt
 package top.yogiczy.mytv.utils
+========
+package top.yogiczy.mytv.core.util.utils
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/util/src/main/java/top/yogiczy/mytv/core/util/utils/Downloader.kt
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,10 +16,13 @@ import okio.buffer
 import java.io.File
 import java.io.FileOutputStream
 
+<<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/Downloader.kt
 object Downloader : Loggable() {
+========
+object Downloader {
+>>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/util/src/main/java/top/yogiczy/mytv/core/util/utils/Downloader.kt
     suspend fun downloadTo(url: String, filePath: String, onProgressCb: ((Int) -> Unit)?) =
         withContext(Dispatchers.IO) {
-            log.d("下载文件: $url")
             val interceptor = Interceptor { chain ->
                 val originalResponse = chain.proceed(chain.request())
                 originalResponse.newBuilder()
@@ -27,15 +34,12 @@ object Downloader : Loggable() {
 
             try {
                 with(client.newCall(request).execute()) {
-                    if (!isSuccessful) {
-                        throw Exception("下载文件失败: $code")
-                    }
+                    if (!isSuccessful) throw Exception("下载文件失败: $code")
 
                     val file = File(filePath)
                     FileOutputStream(file).use { fos -> fos.write(body!!.bytes()) }
                 }
             } catch (ex: Exception) {
-                log.e("下载文件失败", ex)
                 throw Exception("下载文件失败，请检查网络连接", ex)
             }
         }
