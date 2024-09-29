@@ -178,7 +178,7 @@ object Configs {
 
     /** 换台反转 */
     var iptvChannelChangeFlip: Boolean
-        get() = SP.getBoolean(KEY.IPTV_CHANNEL_CHANGE_FLIP.name, false)
+        get() = SP.getBoolean(KEY.IPTV_CHANNEL_CHANGE_FLIP.name, true)
         set(value) = SP.putBoolean(KEY.IPTV_CHANNEL_CHANGE_FLIP.name, value)
 
     /** 当前直播源 */
@@ -277,7 +277,7 @@ object Configs {
     /** ==================== 界面 ==================== */
     /** 显示节目进度 */
     var uiShowEpgProgrammeProgress: Boolean
-        get() = SP.getBoolean(KEY.UI_SHOW_EPG_PROGRAMME_PROGRESS.name, true)
+        get() = SP.getBoolean(KEY.UI_SHOW_EPG_PROGRAMME_PROGRESS.name, false)
         set(value) = SP.putBoolean(KEY.UI_SHOW_EPG_PROGRAMME_PROGRESS.name, value)
 
     /** 显示常驻节目进度 */
@@ -287,12 +287,12 @@ object Configs {
 
     /** 显示台标 */
     var uiShowChannelLogo: Boolean
-        get() = SP.getBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, false)
+        get() = SP.getBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, true)
         set(value) = SP.putBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, value)
 
     /** 使用经典选台界面 */
     var uiUseClassicPanelScreen: Boolean
-        get() = SP.getBoolean(KEY.UI_USE_CLASSIC_PANEL_SCREEN.name, false)
+        get() = SP.getBoolean(KEY.UI_USE_CLASSIC_PANEL_SCREEN.name, true)
         set(value) = SP.putBoolean(KEY.UI_USE_CLASSIC_PANEL_SCREEN.name, value)
 
     /** 界面密度缩放比例 */
