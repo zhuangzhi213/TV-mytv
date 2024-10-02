@@ -190,7 +190,8 @@ private fun ClassicChannelScreenWrapper(
         Box(
             modifier = Modifier
                 .pointerInput(Unit) { detectTapGestures(onTap = { }) }
-                .padding(24.dp)
+//                .padding(24.dp)
+                .padding(top = 0.dp, start = 0.dp)
                 .clip(MaterialTheme.shapes.medium),
         ) {
             content()
