@@ -49,6 +49,7 @@ import top.yogiczy.mytv.core.data.entities.epg.EpgList
 import top.yogiczy.mytv.core.data.entities.epg.EpgList.Companion.recentProgramme
 import top.yogiczy.mytv.core.data.entities.epg.EpgProgramme.Companion.progress
 import top.yogiczy.mytv.core.data.entities.epg.EpgProgrammeRecent
+import top.yogiczy.mytv.tv.ui.material.rememberDebounceState
 import top.yogiczy.mytv.tv.ui.screens.channel.components.ChannelItemLogo
 import top.yogiczy.mytv.tv.ui.screens.settings.LocalSettings
 import top.yogiczy.mytv.tv.ui.theme.MyTVTheme
@@ -76,7 +77,8 @@ fun ClassicChannelItemList(
     val channelGroup = channelGroupProvider()
     val channelList = channelListProvider()
     val initialChannel = initialChannelProvider()
-    val itemFocusRequesterList = remember(channelList) { List(channelList.size) { FocusRequester() } }
+    val itemFocusRequesterList =
+        remember(channelList) { List(channelList.size) { FocusRequester() } }
 
     var hasFocused by rememberSaveable { mutableStateOf(!channelList.contains(initialChannel)) }
     var focusedChannel by remember(channelList) {
@@ -84,7 +86,10 @@ fun ClassicChannelItemList(
             if (hasFocused) channelList.firstOrNull() ?: Channel() else initialChannel
         )
     }
-    LaunchedEffect(focusedChannel) { onChannelFocused(focusedChannel) }
+
+    val onChannelFocusedDebounce = rememberDebounceState(wait = 100L) {
+        onChannelFocused(focusedChannel)
+    }
 
     val listState = remember(channelGroup) {
         LazyListState(
@@ -133,7 +138,10 @@ fun ClassicChannelItemList(
                     }
                     onChannelFavoriteToggle(channel)
                 },
-                onChannelFocused = { focusedChannel = channel },
+                onChannelFocused = {
+                    focusedChannel = channel
+                    onChannelFocusedDebounce.send()
+                },
                 recentEpgProgrammeProvider = { epgListProvider().recentProgramme(channel) },
                 showEpgProgrammeProgressProvider = showEpgProgrammeProgressProvider,
                 focusRequesterProvider = { itemFocusRequesterList[index] },
