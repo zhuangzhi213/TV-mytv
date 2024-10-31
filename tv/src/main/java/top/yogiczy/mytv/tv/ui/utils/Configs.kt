@@ -287,7 +287,7 @@ object Configs {
 
     /** 显示台标 */
     var uiShowChannelLogo: Boolean
-        get() = SP.getBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, true)
+        get() = SP.getBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, false)
         set(value) = SP.putBoolean(KEY.UI_SHOW_CHANNEL_LOGO.name, value)
 
     /** 使用经典选台界面 */
@@ -308,7 +308,7 @@ object Configs {
     /** 时间显示模式 */
     var uiTimeShowMode: UiTimeShowMode
         get() = UiTimeShowMode.fromValue(
-            SP.getInt(KEY.UI_TIME_SHOW_MODE.name, UiTimeShowMode.HIDDEN.value)
+            SP.getInt(KEY.UI_TIME_SHOW_MODE.name, UiTimeShowMode.HALF_HOUR.value)
         )
         set(value) = SP.putInt(KEY.UI_TIME_SHOW_MODE.name, value.value)
 
