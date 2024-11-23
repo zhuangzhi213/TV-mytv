@@ -136,6 +136,9 @@ object Configs {
 
         /** 播放器 显示模式 */
         VIDEO_PLAYER_DISPLAY_MODE,
+
+        /** 播放器 强制音频软解 */
+        VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE,
     }
 
     /** ==================== 应用 ==================== */
@@ -353,6 +356,11 @@ object Configs {
             SP.getInt(KEY.VIDEO_PLAYER_DISPLAY_MODE.name, VideoPlayerDisplayMode.ORIGINAL.value)
         )
         set(value) = SP.putInt(KEY.VIDEO_PLAYER_DISPLAY_MODE.name, value.value)
+
+    /** 播放器 强制音频软解 */
+    var videoPlayerForceAudioSoftDecode: Boolean
+        get() = SP.getBoolean(KEY.VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE.name, true)
+        set(value) = SP.putBoolean(KEY.VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE.name, value)
 
     enum class UiTimeShowMode(val value: Int) {
         /** 隐藏 */
