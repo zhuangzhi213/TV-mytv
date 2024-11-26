@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.tv.material3.Switch
 import top.yogiczy.mytv.core.util.utils.humanizeMs
 import top.yogiczy.mytv.tv.ui.material.LocalPopupManager
 import top.yogiczy.mytv.tv.ui.material.SimplePopup
@@ -77,6 +78,19 @@ fun SettingsCategoryVideoPlayer(
                 onDataSelected = {
                     settingsViewModel.videoPlayerLoadTimeout = it
                     visible = false
+                },
+            )
+        }
+
+        item {
+            SettingsListItem(
+                headlineContent = "强制音频软解",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerForceAudioSoftDecode, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerForceAudioSoftDecode =
+                        !settingsViewModel.videoPlayerForceAudioSoftDecode
                 },
             )
         }

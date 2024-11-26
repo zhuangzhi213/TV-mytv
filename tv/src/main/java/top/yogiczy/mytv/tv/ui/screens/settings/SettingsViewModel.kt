@@ -320,6 +320,14 @@ class SettingsViewModel : ViewModel() {
             Configs.videoPlayerDisplayMode = value
         }
 
+    private var _videoPlayerForceAudioSoftDecode by mutableStateOf(false)
+    var videoPlayerForceAudioSoftDecode: Boolean
+        get() = _videoPlayerForceAudioSoftDecode
+        set(value) {
+            _videoPlayerForceAudioSoftDecode = value
+            Configs.videoPlayerForceAudioSoftDecode = value
+        }
+
     init {
         // 删除过期的预约
         _epgChannelReserveList = EpgProgrammeReserveList(
@@ -368,5 +376,6 @@ class SettingsViewModel : ViewModel() {
         _videoPlayerUserAgent = Configs.videoPlayerUserAgent
         _videoPlayerLoadTimeout = Configs.videoPlayerLoadTimeout
         _videoPlayerAspectRatio = Configs.videoPlayerDisplayMode
+        _videoPlayerForceAudioSoftDecode = Configs.videoPlayerForceAudioSoftDecode
     }
 }
