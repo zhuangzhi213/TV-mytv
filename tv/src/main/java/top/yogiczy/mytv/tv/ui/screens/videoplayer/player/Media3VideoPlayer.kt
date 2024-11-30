@@ -33,20 +33,12 @@ class Media3VideoPlayer(
     private val context: Context,
     private val coroutineScope: CoroutineScope,
 ) : VideoPlayer(coroutineScope) {
-    private val videoPlayer by lazy {
-        val renderersFactory = DefaultRenderersFactory(context)
-            .setExtensionRendererMode(
-                if (Configs.videoPlayerForceAudioSoftDecode)
-                    DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER
-                else DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON
-            )
 
-        ExoPlayer
-            .Builder(context)
-            .setRenderersFactory(renderersFactory)
-            .build()
-            .apply { playWhenReady = true }
-    }
+    private var videoPlayer = getPlayer()
+
+    private var softDecode: Boolean? = null
+    private var surfaceView: SurfaceView? = null
+
     private val dataSourceFactory by lazy {
         DefaultDataSource.Factory(
             context,
@@ -62,6 +54,39 @@ class Media3VideoPlayer(
 
     private val contentTypeAttempts = mutableMapOf<Int, Boolean>()
     private var updatePositionJob: Job? = null
+
+    private fun getPlayer(): ExoPlayer {
+        val renderersFactory = DefaultRenderersFactory(context)
+            .setExtensionRendererMode(
+                if (softDecode ?: Configs.videoPlayerForceAudioSoftDecode)
+                    DefaultRenderersFactory.EXTENSION_RENDERER_MODE_PREFER
+                else DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON
+            )
+
+        return ExoPlayer
+            .Builder(context)
+            .setRenderersFactory(renderersFactory)
+            .build()
+            .apply { playWhenReady = true }
+    }
+
+    private fun reInitPlayer() {
+        val uri = videoPlayer.currentMediaItem?.localConfiguration?.uri
+
+        videoPlayer.removeListener(playerListener)
+        videoPlayer.removeAnalyticsListener(metadataListener)
+        videoPlayer.removeAnalyticsListener(eventLogger)
+        videoPlayer.release()
+
+        videoPlayer = getPlayer()
+
+        videoPlayer.addListener(playerListener)
+        videoPlayer.addAnalyticsListener(metadataListener)
+        videoPlayer.addAnalyticsListener(eventLogger)
+
+        surfaceView?.let { setVideoSurfaceView(it) }
+        uri?.let { prepare(uri) }
+    }
 
     private fun getMediaSource(uri: Uri, contentType: Int? = null): MediaSource? {
         val mediaItem = MediaItem.fromUri(uri)
@@ -139,6 +164,20 @@ class Media3VideoPlayer(
                                 )
                             )
                         }
+                    }
+                }
+
+                androidx.media3.common.PlaybackException.ERROR_CODE_DECODER_INIT_FAILED -> {
+                    if (softDecode == true) {
+                        triggerError(
+                            PlaybackException(
+                                ex.errorCodeName.replace("ERROR_CODE", "MEDIA3_ERROR"),
+                                ex.errorCode
+                            )
+                        )
+                    } else {
+                        softDecode = true
+                        reInitPlayer()
                     }
                 }
 
@@ -274,6 +313,7 @@ class Media3VideoPlayer(
     }
 
     override fun setVideoSurfaceView(surfaceView: SurfaceView) {
+        this.surfaceView = surfaceView
         videoPlayer.setVideoSurfaceView(surfaceView)
     }
 }
