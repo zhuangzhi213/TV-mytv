@@ -40,6 +40,31 @@ fun SettingsCategoryVideoPlayer(
             )
         }
 
+        item {
+            SettingsListItem(
+                headlineContent = "强制音频软解",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerForceAudioSoftDecode, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerForceAudioSoftDecode =
+                        !settingsViewModel.videoPlayerForceAudioSoftDecode
+                },
+            )
+        }
+
+        item {
+            SettingsListItem(
+                headlineContent = "停止上一媒体项",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerStopPreviousMediaItem, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerStopPreviousMediaItem =
+                        !settingsViewModel.videoPlayerStopPreviousMediaItem
+                },
+            )
+        }
 
         item {
             val popupManager = LocalPopupManager.current
@@ -95,19 +120,6 @@ fun SettingsCategoryVideoPlayer(
                 onDataSelected = {
                     settingsViewModel.videoPlayerLoadTimeout = it
                     visible = false
-                },
-            )
-        }
-
-        item {
-            SettingsListItem(
-                headlineContent = "强制音频软解",
-                trailingContent = {
-                    Switch(settingsViewModel.videoPlayerForceAudioSoftDecode, null)
-                },
-                onSelected = {
-                    settingsViewModel.videoPlayerForceAudioSoftDecode =
-                        !settingsViewModel.videoPlayerForceAudioSoftDecode
                 },
             )
         }

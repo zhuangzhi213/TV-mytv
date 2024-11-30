@@ -336,6 +336,14 @@ class SettingsViewModel : ViewModel() {
             Configs.videoPlayerRenderMode = value
         }
 
+    private var _videoPlayerStopPreviousMediaItem by mutableStateOf(false)
+    var videoPlayerStopPreviousMediaItem: Boolean
+        get() = _videoPlayerStopPreviousMediaItem
+        set(value) {
+            _videoPlayerStopPreviousMediaItem = value
+            Configs.videoPlayerStopPreviousMediaItem = value
+        }
+
     init {
         // 删除过期的预约
         _epgChannelReserveList = EpgProgrammeReserveList(

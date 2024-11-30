@@ -142,6 +142,9 @@ object Configs {
 
         /** 播放器 渲染方式 */
         VIDEO_PLAYER_RENDER_MODE,
+
+        /** 播放器 停止上一媒体项 */
+        VIDEO_PLAYER_STOP_PREVIOUS_MEDIA_ITEM,
     }
 
     /** ==================== 应用 ==================== */
@@ -371,6 +374,11 @@ object Configs {
             SP.getInt(KEY.VIDEO_PLAYER_RENDER_MODE.name, VideoPlayerRenderMode.SURFACE_VIEW.value)
         )
         set(value) = SP.putInt(KEY.VIDEO_PLAYER_RENDER_MODE.name, value.value)
+
+    /** 播放器 停止上一媒体项 */
+    var videoPlayerStopPreviousMediaItem: Boolean
+        get() = SP.getBoolean(KEY.VIDEO_PLAYER_STOP_PREVIOUS_MEDIA_ITEM.name, false)
+        set(value) = SP.putBoolean(KEY.VIDEO_PLAYER_STOP_PREVIOUS_MEDIA_ITEM.name, value)
 
     enum class UiTimeShowMode(val value: Int) {
         /** 隐藏 */
