@@ -16,6 +16,7 @@ import top.yogiczy.mytv.tv.ui.material.SimplePopup
 import top.yogiczy.mytv.tv.ui.screens.components.SelectDialog
 import top.yogiczy.mytv.tv.ui.screens.settings.SettingsViewModel
 import top.yogiczy.mytv.tv.ui.screens.videoplayerdiaplaymode.VideoPlayerDisplayModeScreen
+import top.yogiczy.mytv.tv.ui.utils.Configs
 
 @Composable
 fun SettingsCategoryVideoPlayer(
@@ -24,11 +25,27 @@ fun SettingsCategoryVideoPlayer(
 ) {
     SettingsContentList(modifier) {
         item {
+            SettingsListItem(
+                modifier = Modifier.focusRequester(it),
+                headlineContent = "渲染方式",
+                trailingContent = settingsViewModel.videoPlayerRenderMode.label,
+                onSelected = {
+                    if (settingsViewModel.videoPlayerRenderMode == Configs.VideoPlayerRenderMode.SURFACE_VIEW)
+                        settingsViewModel.videoPlayerRenderMode =
+                            Configs.VideoPlayerRenderMode.TEXTURE_VIEW
+                    else
+                        settingsViewModel.videoPlayerRenderMode =
+                            Configs.VideoPlayerRenderMode.SURFACE_VIEW
+                },
+            )
+        }
+
+
+        item {
             val popupManager = LocalPopupManager.current
             var visible by remember { mutableStateOf(false) }
 
             SettingsListItem(
-                modifier = Modifier.focusRequester(it),
                 headlineContent = "全局显示模式",
                 trailingContent = settingsViewModel.videoPlayerDisplayMode.label,
                 onSelected = {

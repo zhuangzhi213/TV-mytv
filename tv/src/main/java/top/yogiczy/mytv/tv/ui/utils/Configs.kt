@@ -139,6 +139,9 @@ object Configs {
 
         /** 播放器 强制音频软解 */
         VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE,
+
+        /** 播放器 渲染方式 */
+        VIDEO_PLAYER_RENDER_MODE,
     }
 
     /** ==================== 应用 ==================== */
@@ -362,6 +365,13 @@ object Configs {
         get() = SP.getBoolean(KEY.VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE.name, true)
         set(value) = SP.putBoolean(KEY.VIDEO_PLAYER_FORCE_AUDIO_SOFT_DECODE.name, value)
 
+    /** 播放器 渲染方式 */
+    var videoPlayerRenderMode: VideoPlayerRenderMode
+        get() = VideoPlayerRenderMode.fromValue(
+            SP.getInt(KEY.VIDEO_PLAYER_RENDER_MODE.name, VideoPlayerRenderMode.SURFACE_VIEW.value)
+        )
+        set(value) = SP.putInt(KEY.VIDEO_PLAYER_RENDER_MODE.name, value.value)
+
     enum class UiTimeShowMode(val value: Int) {
         /** 隐藏 */
         HIDDEN(0),
@@ -395,6 +405,20 @@ object Configs {
         companion object {
             fun fromValue(value: Int): IptvHybridMode {
                 return entries.firstOrNull { it.value == value } ?: DISABLE
+            }
+        }
+    }
+
+    enum class VideoPlayerRenderMode(val value: Int, val label: String) {
+        /** SurfaceView */
+        SURFACE_VIEW(0, "SurfaceView"),
+
+        /** TextureView */
+        TEXTURE_VIEW(1, "TextureView");
+
+        companion object {
+            fun fromValue(value: Int): VideoPlayerRenderMode {
+                return entries.firstOrNull { it.value == value } ?: SURFACE_VIEW
             }
         }
     }
