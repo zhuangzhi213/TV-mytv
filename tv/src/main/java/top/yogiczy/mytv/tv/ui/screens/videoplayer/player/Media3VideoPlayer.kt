@@ -288,6 +288,7 @@ class Media3VideoPlayer(
     }
 
     override fun prepare(url: String) {
+        videoPlayer.stop()
         contentTypeAttempts.clear()
         prepare(Uri.parse(url.let {
             if (url.endsWith("?")) "${it}t" else it
