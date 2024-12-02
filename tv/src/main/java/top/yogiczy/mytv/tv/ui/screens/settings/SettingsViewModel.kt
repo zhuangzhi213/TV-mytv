@@ -344,6 +344,14 @@ class SettingsViewModel : ViewModel() {
             Configs.videoPlayerStopPreviousMediaItem = value
         }
 
+    private var _videoPlayerSkipMultipleFramesOnSameVSync by mutableStateOf(false)
+    var videoPlayerSkipMultipleFramesOnSameVSync: Boolean
+        get() = _videoPlayerSkipMultipleFramesOnSameVSync
+        set(value) {
+            _videoPlayerSkipMultipleFramesOnSameVSync = value
+            Configs.videoPlayerSkipMultipleFramesOnSameVSync = value
+        }
+
     init {
         // 删除过期的预约
         _epgChannelReserveList = EpgProgrammeReserveList(
@@ -394,5 +402,6 @@ class SettingsViewModel : ViewModel() {
         _videoPlayerAspectRatio = Configs.videoPlayerDisplayMode
         _videoPlayerForceAudioSoftDecode = Configs.videoPlayerForceAudioSoftDecode
         _videoPlayerRenderMode = Configs.videoPlayerRenderMode
+        _videoPlayerSkipMultipleFramesOnSameVSync = Configs.videoPlayerSkipMultipleFramesOnSameVSync
     }
 }
