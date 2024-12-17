@@ -3,6 +3,7 @@ package top.yogiczy.mytv.tv.ui.screens.videoplayer.player
 import android.content.Context
 import android.net.Uri
 import android.view.SurfaceView
+import android.view.TextureView
 import androidx.annotation.OptIn
 import androidx.media3.common.C
 import androidx.media3.common.Format
@@ -279,5 +280,9 @@ class Media3VideoPlayer(
 
     override fun setVideoSurfaceView(surfaceView: SurfaceView) {
         videoPlayer.setVideoSurfaceView(surfaceView)
+    }
+
+    override fun setVideoTextureView(textureView: TextureView) {
+        TODO("Not yet implemented")
     }
 }

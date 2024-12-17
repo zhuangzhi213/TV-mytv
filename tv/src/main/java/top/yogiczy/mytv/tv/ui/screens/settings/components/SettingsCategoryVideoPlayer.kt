@@ -16,6 +16,7 @@ import top.yogiczy.mytv.tv.ui.material.SimplePopup
 import top.yogiczy.mytv.tv.ui.screens.components.SelectDialog
 import top.yogiczy.mytv.tv.ui.screens.settings.SettingsViewModel
 import top.yogiczy.mytv.tv.ui.screens.videoplayerdiaplaymode.VideoPlayerDisplayModeScreen
+import top.yogiczy.mytv.tv.ui.utils.Configs
 
 @Composable
 fun SettingsCategoryVideoPlayer(
@@ -24,11 +25,65 @@ fun SettingsCategoryVideoPlayer(
 ) {
     SettingsContentList(modifier) {
         item {
+            SettingsListItem(
+                modifier = Modifier.focusRequester(it),
+                headlineContent = "渲染方式",
+                trailingContent = settingsViewModel.videoPlayerRenderMode.label,
+                onSelected = {
+                    if (settingsViewModel.videoPlayerRenderMode == Configs.VideoPlayerRenderMode.SURFACE_VIEW)
+                        settingsViewModel.videoPlayerRenderMode =
+                            Configs.VideoPlayerRenderMode.TEXTURE_VIEW
+                    else
+                        settingsViewModel.videoPlayerRenderMode =
+                            Configs.VideoPlayerRenderMode.SURFACE_VIEW
+                },
+            )
+        }
+
+        item {
+            SettingsListItem(
+                headlineContent = "强制音频软解",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerForceAudioSoftDecode, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerForceAudioSoftDecode =
+                        !settingsViewModel.videoPlayerForceAudioSoftDecode
+                },
+            )
+        }
+
+        item {
+            SettingsListItem(
+                headlineContent = "停止上一媒体项",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerStopPreviousMediaItem, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerStopPreviousMediaItem =
+                        !settingsViewModel.videoPlayerStopPreviousMediaItem
+                },
+            )
+        }
+
+        item {
+            SettingsListItem(
+                headlineContent = "跳过多帧渲染",
+                trailingContent = {
+                    Switch(settingsViewModel.videoPlayerSkipMultipleFramesOnSameVSync, null)
+                },
+                onSelected = {
+                    settingsViewModel.videoPlayerSkipMultipleFramesOnSameVSync =
+                        !settingsViewModel.videoPlayerSkipMultipleFramesOnSameVSync
+                },
+            )
+        }
+
+        item {
             val popupManager = LocalPopupManager.current
             var visible by remember { mutableStateOf(false) }
 
             SettingsListItem(
-                modifier = Modifier.focusRequester(it),
                 headlineContent = "全局显示模式",
                 trailingContent = settingsViewModel.videoPlayerDisplayMode.label,
                 onSelected = {
@@ -78,19 +133,6 @@ fun SettingsCategoryVideoPlayer(
                 onDataSelected = {
                     settingsViewModel.videoPlayerLoadTimeout = it
                     visible = false
-                },
-            )
-        }
-
-        item {
-            SettingsListItem(
-                headlineContent = "强制音频软解",
-                trailingContent = {
-                    Switch(settingsViewModel.videoPlayerForceAudioSoftDecode, null)
-                },
-                onSelected = {
-                    settingsViewModel.videoPlayerForceAudioSoftDecode =
-                        !settingsViewModel.videoPlayerForceAudioSoftDecode
                 },
             )
         }

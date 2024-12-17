@@ -43,7 +43,10 @@ fun UpdateScreen(
 
     LaunchedEffect(Unit) {
         delay(3000)
-        updateViewModel.checkUpdate(packageInfo.versionName, settingsViewModel.updateChannel)
+        updateViewModel.checkUpdate(
+            packageInfo.versionName ?: "0.0.0",
+            settingsViewModel.updateChannel
+        )
 
         val latestRelease = updateViewModel.latestRelease
         if (

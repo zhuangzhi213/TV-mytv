@@ -23,7 +23,6 @@ import top.yogiczy.mytv.core.data.utils.Globals
 import top.yogiczy.mytv.core.data.utils.Loggable
 import top.yogiczy.mytv.core.data.utils.Logger
 import top.yogiczy.mytv.core.util.utils.ApkInstaller
-import top.yogiczy.mytv.tv.R
 import top.yogiczy.mytv.tv.ui.material.Snackbar
 import top.yogiczy.mytv.tv.ui.material.SnackbarType
 import top.yogiczy.mytv.tv.ui.screens.videoplayer.VideoPlayerDisplayMode
@@ -47,13 +46,13 @@ object HttpServer : Loggable() {
                 server.listen(AsyncServer.getDefault(), SERVER_PORT)
 
                 server.get("/") { _, response ->
-                    handleRawResource(response, context, "text/html", R.raw.web_push)
+                    handleAssetsResource(response, context, "text/html", "web_push.html")
                 }
                 server.get("/web_push_css.css") { _, response ->
-                    handleRawResource(response, context, "text/css", R.raw.web_push_css)
+                    handleAssetsResource(response, context, "text/css", "web_push_css.css")
                 }
                 server.get("/web_push_js.js") { _, response ->
-                    handleRawResource(response, context, "text/javascript", R.raw.web_push_js)
+                    handleAssetsResource(response, context, "text/javascript", "web_push_js.js")
                 }
 
                 server.get("/api/info") { _, response ->
@@ -100,15 +99,15 @@ object HttpServer : Loggable() {
         headers.set("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token")
     }
 
-    private fun handleRawResource(
+    private fun handleAssetsResource(
         response: AsyncHttpServerResponse,
         context: Context,
         contentType: String,
-        id: Int,
+        filename: String,
     ) {
         wrapResponse(response).apply {
             setContentType(contentType)
-            send(context.resources.openRawResource(id).readBytes().decodeToString())
+            send(context.assets.open(filename).reader().readText())
         }
     }
 
@@ -332,7 +331,7 @@ object HttpServer : Loggable() {
     }
 
     private fun getLocalIpAddress(): String {
-        val defaultIp = "0.0.0.0"
+        val defaultIp = "127.0.0.1"
 
         try {
             val en = NetworkInterface.getNetworkInterfaces()
