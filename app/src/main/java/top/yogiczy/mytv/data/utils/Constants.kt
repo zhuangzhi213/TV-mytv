@@ -46,7 +46,7 @@ object Constants {
     /**
      * GitHub加速代理地址
      */
-    const val GITHUB_PROXY = "https://mirror.ghproxy.com/"
+    const val GITHUB_PROXY = "https://gh.monlor.com/"
 
     /**
      * HTTP请求重试次数
