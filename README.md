@@ -3,10 +3,10 @@
 <div align="center">
 
 
-![GitHub Repo stars](https://img.shields.io/github/stars/yaoxieyoulei/mytv-android)
-![GitHub all releases](https://img.shields.io/github/downloads/yaoxieyoulei/mytv-android/total)
+![GitHub Repo stars](https://img.shields.io/github/stars/minyoad/mytv-android)
+![GitHub all releases](https://img.shields.io/github/downloads/minyoad/mytv-android/total)
 [![Android Sdk Require](https://img.shields.io/badge/Android-5.0%2B-informational?logo=android)](https://apilevels.com/#:~:text=Jetpack%20Compose%20requires%20a%20minSdk%20of%2021%20or%20higher)
-[![GitHub](https://img.shields.io/github/license/yaoxieyoulei/mytv-android)](https://github.com/yaoxieyoulei/mytv-android)
+[![GitHub](https://img.shields.io/github/license/minyoad/mytv-android)](https://github.com/minyoad/mytv-android)
 
 </div>
     <p>使用Android原生开发的电视直播软件</p>
@@ -121,10 +121,6 @@
 ## 声明
 
 此项目（我的电视）是个人为了兴趣而开发, 仅用于学习和测试。 所用API皆从官方网站收集, 不提供任何破解内容。
-
-## 赞赏
-
-<img src="./screenshots/mm_reward_qrcode.png" width="48%"/>
 
 ## 致谢
 
