@@ -115,36 +115,36 @@ fun SettingsCategoryAbout(
             }
         }
 
-        item {
-            val popupManager = LocalPopupManager.current
-            val focusRequester = remember { FocusRequester() }
-            var visible by remember { mutableStateOf(false) }
-
-            SettingsListItem(
-                modifier = Modifier.focusRequester(focusRequester),
-                headlineContent = "赞赏",
-                trailingIcon = Icons.AutoMirrored.Filled.OpenInNew,
-                onSelected = {
-                    popupManager.push(focusRequester, true)
-                    visible = true
-                },
-            )
-
-            SimplePopup(
-                visibleProvider = { visible },
-                onDismissRequest = { visible = false },
-            ) {
-                val painter = painterResource(R.drawable.mm_reward_qrcode)
-
-                Image(
-                    painter,
-                    contentDescription = null,
-                    modifier = Modifier
-                        .align(Alignment.Center)
-                        .size(300.dp),
-                )
-            }
-        }
+//        item {
+//            val popupManager = LocalPopupManager.current
+//            val focusRequester = remember { FocusRequester() }
+//            var visible by remember { mutableStateOf(false) }
+//
+//            SettingsListItem(
+//                modifier = Modifier.focusRequester(focusRequester),
+//                headlineContent = "赞赏",
+//                trailingIcon = Icons.AutoMirrored.Filled.OpenInNew,
+//                onSelected = {
+//                    popupManager.push(focusRequester, true)
+//                    visible = true
+//                },
+//            )
+//
+//            SimplePopup(
+//                visibleProvider = { visible },
+//                onDismissRequest = { visible = false },
+//            ) {
+//                val painter = painterResource(R.drawable.mm_reward_qrcode)
+//
+//                Image(
+//                    painter,
+//                    contentDescription = null,
+//                    modifier = Modifier
+//                        .align(Alignment.Center)
+//                        .size(300.dp),
+//                )
+//            }
+//        }
     }
 }
 
