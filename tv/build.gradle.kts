@@ -106,6 +106,8 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.androidasync)
 
+    implementation("com.google.code.gson:gson:2.8.9")
+
     implementation(project(":core:data"))
     implementation(project(":core:designsystem"))
     implementation(project(":core:util"))

@@ -1,5 +1,7 @@
 package top.yogiczy.mytv.tv.ui.utils
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import top.yogiczy.mytv.core.data.entities.epg.EpgProgrammeReserveList
@@ -75,6 +77,8 @@ object Configs {
 
         /** 混合模式 */
         IPTV_HYBRID_MODE,
+
+        IPTV_CHANNEL_URL_INDEX,
 
         /** ==================== 节目单 ==================== */
         /** 启用节目单 */
@@ -210,6 +214,24 @@ object Configs {
     var iptvSourceCacheTime: Long
         get() = SP.getLong(KEY.IPTV_SOURCE_CACHE_TIME.name, Constants.IPTV_SOURCE_CACHE_TIME)
         set(value) = SP.putLong(KEY.IPTV_SOURCE_CACHE_TIME.name, value)
+
+    var iptvChannelUrlIdx: Map<String, Int>
+        get() {
+            var jsonString=SP.getString(KEY.IPTV_CHANNEL_URL_INDEX.name, "")
+            if (jsonString.isBlank()) {
+                jsonString = "{}"
+            }
+            // 将 JSON 字符串转换回 Map
+            val gson = Gson()
+            val type = object : TypeToken<Map<String, Int>>() {}.type
+            return gson.fromJson(jsonString, type)
+        }
+        set(value) {    // 将 Map 转换为 JSON 字符串
+            val gson = Gson()
+            val jsonString = gson.toJson(value)
+            SP.putString(KEY.IPTV_CHANNEL_URL_INDEX.name, jsonString)
+        }
+
 
     /** 直播源可播放host列表 */
     var iptvPlayableHostList: Set<String>

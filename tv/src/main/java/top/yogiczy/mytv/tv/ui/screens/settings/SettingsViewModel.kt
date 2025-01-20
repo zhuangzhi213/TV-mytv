@@ -72,6 +72,31 @@ class SettingsViewModel : ViewModel() {
             Configs.iptvLastChannelIdx = value
         }
 
+    private var _iptvChannelUrlIdxMap= mutableStateOf(mutableMapOf<String, Int>().apply {
+        putAll(Configs.iptvChannelUrlIdx) // 将 Configs.urlIdxs 中的数据放入 myMap
+    })
+    fun getIptvChannelUrlIdx(channel_name:String):Int{
+        return _iptvChannelUrlIdxMap.value.getOrDefault(channel_name,0)
+    }
+    fun setIptvChannelUrlIdx(channel_name:String,value:Int){
+        _iptvChannelUrlIdxMap.value[channel_name] = value
+        Configs.iptvChannelUrlIdx = _iptvChannelUrlIdxMap.value
+    }
+//    var iptvChannelUrlIdx: Int
+//        get(channel_name) = _iptvChannelUrlIdxMap.getOrDefault(channel_name,0)
+//        set(channel_name,value) {
+//            _iptvChannelUrlIdx = value
+//            Configs.iptvChannelUrlIdx = value
+//        }
+
+//    private var _iptvChannelUrlIdx by mutableStateOf(Configs.iptvChannelUrlIdx)
+//    var iptvChannelUrlIdx: Map<String, Int>
+//        get() = _iptvChannelUrlIdx
+//        set(value) {
+//            _iptvChannelUrlIdx = value
+//            Configs.iptvChannelUrlIdx = value
+//        }
+
     private var _iptvChannelChangeFlip by mutableStateOf(Configs.iptvChannelChangeFlip)
     var iptvChannelChangeFlip: Boolean
         get() = _iptvChannelChangeFlip
@@ -380,6 +405,7 @@ class SettingsViewModel : ViewModel() {
         _iptvChannelFavoriteList = Configs.iptvChannelFavoriteList
         _iptvChannelFavoriteChangeBoundaryJumpOut = Configs.iptvChannelFavoriteChangeBoundaryJumpOut
         _iptvChannelGroupHiddenList = Configs.iptvChannelGroupHiddenList
+//        _iptvChannelUrlIdx = Configs.iptvChannelUrlIdx
         _iptvHybridMode = Configs.iptvHybridMode
         _epgEnable = Configs.epgEnable
         _epgSourceCurrent = Configs.epgSourceCurrent

@@ -12,6 +12,11 @@ abstract class FileCacheRepository(
     private val fileName: String,
     private val isFullPath: Boolean = false,
 ) {
+    private var onDataChanged:(() -> Unit)? = null
+
+    public fun setDataChanged(onDataChanged: () ->Unit) {
+        this.onDataChanged = onDataChanged
+    }
     private fun getCacheFile() =
         if (isFullPath) File(fileName) else File(Globals.cacheDir, fileName)
 
@@ -45,6 +50,11 @@ abstract class FileCacheRepository(
 
         if (data.isNullOrBlank()) {
             data = refreshOp()
+
+            if(data!=getCacheData()) {
+                onDataChanged?.invoke()
+            }
+
             setCacheData(data)
         }
 

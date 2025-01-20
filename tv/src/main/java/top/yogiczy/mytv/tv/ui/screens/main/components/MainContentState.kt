@@ -119,6 +119,8 @@ class MainContentState(
                 delay(Constants.UI_TEMP_CHANNEL_SCREEN_SHOW_DURATION)
                 if (name == _currentChannel.name && urlIdx == _currentChannelUrlIdx) {
                     _isTempChannelScreenVisible = false
+                    settingsViewModel.setIptvChannelUrlIdx(_currentChannel.name, _currentChannelUrlIdx)
+//                    settingsViewModel.iptvChannelUrlIdx[_currentChannel.name]= _currentChannelUrlIdx
                 }
             }
         }
@@ -204,9 +206,10 @@ class MainContentState(
     }
 
     private fun getUrlIdx(urlList: List<String>, urlIdx: Int? = null): Int {
-        val idx = if (urlIdx == null) urlList.indexOfFirst {
-            settingsViewModel.iptvPlayableHostList.contains(getUrlHost(it))
-        }
+        val idx = if (urlIdx == null) settingsViewModel.getIptvChannelUrlIdx(_currentChannel.name)
+//            urlList.indexOfFirst {
+//            settingsViewModel.iptvPlayableHostList.contains(getUrlHost(it))
+//        }
         else (urlIdx + urlList.size) % urlList.size
 
         return max(0, min(idx, urlList.size - 1))

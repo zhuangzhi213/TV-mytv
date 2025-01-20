@@ -23,6 +23,7 @@ import top.yogiczy.mytv.core.data.repositories.epg.EpgRepository
 import top.yogiczy.mytv.core.data.repositories.iptv.IptvRepository
 import top.yogiczy.mytv.core.data.utils.ChannelUtil
 import top.yogiczy.mytv.core.data.utils.Constants
+import top.yogiczy.mytv.core.data.utils.SP
 import top.yogiczy.mytv.tv.ui.material.Snackbar
 import top.yogiczy.mytv.tv.ui.material.SnackbarType
 import top.yogiczy.mytv.tv.ui.utils.Configs
@@ -40,6 +41,12 @@ class MainViewModel : ViewModel() {
             _uiState.value = MainUiState.Loading()
             refreshChannel()
             refreshEpg()
+        }
+    }
+
+    private suspend fun onChannelChanged() {
+        viewModelScope.launch {
+            Configs.iptvChannelUrlIdx= emptyMap()
         }
     }
 
