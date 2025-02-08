@@ -277,7 +277,7 @@ private fun ClassicChannelItem(
                 },
                 supportingContent = {
                     Text(
-                        text = nowEpgProgramme?.title ?: "无节目",
+                        text = nowEpgProgramme?.title ?: "精彩节目",
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier.ifElse(isFocused, Modifier.basicMarquee()),

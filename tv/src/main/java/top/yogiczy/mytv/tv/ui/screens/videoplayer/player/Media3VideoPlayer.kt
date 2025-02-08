@@ -28,6 +28,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import top.yogiczy.mytv.core.data.utils.Logger
 import top.yogiczy.mytv.tv.ui.utils.Configs
 
 @OptIn(UnstableApi::class)
@@ -35,6 +36,8 @@ class Media3VideoPlayer(
     private val context: Context,
     private val coroutineScope: CoroutineScope,
 ) : VideoPlayer(coroutineScope) {
+    private val log = Logger.create(javaClass.simpleName)
+
     private val videoPlayer by lazy {
         val renderersFactory = DefaultRenderersFactory(context)
             .setExtensionRendererMode(
@@ -79,7 +82,7 @@ class Media3VideoPlayer(
             }
 
             C.CONTENT_TYPE_RTSP -> {
-                RtspMediaSource.Factory().createMediaSource(mediaItem)
+                RtspMediaSource.Factory().setDebugLoggingEnabled(true).createMediaSource(mediaItem)
             }
 
             C.CONTENT_TYPE_OTHER -> {
@@ -118,6 +121,8 @@ class Media3VideoPlayer(
 
 
         override fun onPlayerError(ex: androidx.media3.common.PlaybackException) {
+            log.e("onPlayerError", ex)
+
             when (ex.errorCode) {
                 androidx.media3.common.PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW,
                 androidx.media3.common.PlaybackException.ERROR_CODE_DECODING_FAILED,
@@ -283,6 +288,7 @@ class Media3VideoPlayer(
     }
 
     override fun setVideoTextureView(textureView: TextureView) {
-        TODO("Not yet implemented")
+//        TODO("Not yet implemented")
+        videoPlayer.setVideoTextureView(textureView)
     }
 }
