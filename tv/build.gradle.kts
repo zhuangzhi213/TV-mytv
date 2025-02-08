@@ -19,7 +19,7 @@ android {
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 2
-        versionName = "2.2.8"
+        versionName = "2.2.9"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -106,7 +106,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.androidasync)
 
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     implementation(project(":core:data"))
     implementation(project(":core:designsystem"))
