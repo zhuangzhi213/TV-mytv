@@ -1,0 +1,45 @@
+name: Release APK
+
+on:
+  release:
+    types: [published]  # 监听发布事件
+
+jobs:
+  update_json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository with the JSON file
+        uses: actions/checkout@v2
+        with:
+          repository: minyoad/mytv-android-update  # 替换为目标仓库
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: json-repo  # 将目标仓库检出到 json-repo 文件夹
+
+      - name: Get release information
+        id: get_release_info
+        run: |
+          echo "RELEASE_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          echo "APK_URL=${{ github.event.release.assets[0].browser_download_url }}" >> $GITHUB_ENV  # 获取 APK 下载链接
+          echo "RELEASE_BODY=${{ github.event.release.body }}" >> $GITHUB_ENV
+
+      - name: Update JSON file
+        run: |
+          JSON_FILE=json-repo/tv-stable.json  # 更新为目标 JSON 文件路径
+          jq --arg tag "$RELEASE_TAG" \
+             --arg url "$APK_URL" \
+             --arg body "$RELEASE_BODY" \
+             '{
+               tag_name: $tag,
+               assets: [{ browser_download_url: $url }],
+               body: $body
+             }' \
+             $JSON_FILE > tmp.json && mv tmp.json $JSON_FILE
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add json-repo/tv-stable.json  # 更新为目标 JSON 文件路径
+          git commit -m "Update release information for ${RELEASE_TAG}"
+          git push
