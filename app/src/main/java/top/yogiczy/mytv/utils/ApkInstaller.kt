@@ -1,7 +1,7 @@
 <<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/ApkInstaller.kt
-package top.yogiczy.mytv.utils
+package com.zhuangzhi.mytv.utils
 ========
-package top.yogiczy.mytv.core.util.utils
+package com.zhuangzhi.mytv.core.util.utils
 >>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/util/src/main/java/top/yogiczy/mytv/core/util/utils/ApkInstaller.kt
 
 import android.annotation.SuppressLint

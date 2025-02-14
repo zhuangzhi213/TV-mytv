@@ -1,7 +1,7 @@
 <<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/activities/LeanbackActivity.kt
-package top.yogiczy.mytv.activities
+package com.zhuangzhi.mytv.activities
 ========
-package top.yogiczy.mytv.tv
+package com.zhuangzhi.mytv.tv
 >>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:tv/src/main/java/top/yogiczy/mytv/tv/MainActivity.kt
 
 import android.app.PictureInPictureParams
@@ -18,11 +18,11 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 <<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/activities/LeanbackActivity.kt
-import top.yogiczy.mytv.ui.LeanbackApp
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.HttpServer
-import top.yogiczy.mytv.ui.utils.SP
+import com.zhuangzhi.mytv.ui.LeanbackApp
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastState
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.HttpServer
+import com.zhuangzhi.mytv.ui.utils.SP
 import kotlin.system.exitProcess
 
 class LeanbackActivity : ComponentActivity() {
@@ -40,9 +40,9 @@ class LeanbackActivity : ComponentActivity() {
 
 ========
 import androidx.tv.material3.Surface
-import top.yogiczy.mytv.tv.ui.App
-import top.yogiczy.mytv.tv.ui.theme.MyTVTheme
-import top.yogiczy.mytv.tv.utlis.HttpServer
+import com.zhuangzhi.mytv.tv.ui.App
+import com.zhuangzhi.mytv.tv.ui.theme.MyTVTheme
+import com.zhuangzhi.mytv.tv.utlis.HttpServer
 import kotlin.system.exitProcess
 
 class MainActivity : ComponentActivity() {

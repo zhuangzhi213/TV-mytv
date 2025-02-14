@@ -1,16 +1,16 @@
-package top.yogiczy.mytv.data.repositories.iptv
+package com.zhuangzhi.mytv.data.repositories.iptv
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroup
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.data.entities.IptvList
-import top.yogiczy.mytv.data.repositories.FileCacheRepository
-import top.yogiczy.mytv.data.repositories.iptv.parser.IptvParser
-import top.yogiczy.mytv.utils.Logger
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroup
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.data.repositories.FileCacheRepository
+import com.zhuangzhi.mytv.data.repositories.iptv.parser.IptvParser
+import com.zhuangzhi.mytv.utils.Logger
 
 /**
  * 直播源获取

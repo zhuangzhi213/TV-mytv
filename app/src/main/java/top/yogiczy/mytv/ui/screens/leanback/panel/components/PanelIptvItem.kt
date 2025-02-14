@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.panel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.panel.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -29,11 +29,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.Border
 import androidx.tv.material3.CardDefaults
-import top.yogiczy.mytv.data.entities.EpgProgramme
-import top.yogiczy.mytv.data.entities.EpgProgramme.Companion.progress
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.EpgProgramme
+import com.zhuangzhi.mytv.data.entities.EpgProgramme.Companion.progress
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 
 @Composable
 fun LeanbackPanelIptvItem(

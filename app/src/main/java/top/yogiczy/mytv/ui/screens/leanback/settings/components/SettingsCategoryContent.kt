@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,8 +7,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import top.yogiczy.mytv.ui.screens.leanback.settings.LeanbackSettingsCategories
-import top.yogiczy.mytv.utils.Logger
+import com.zhuangzhi.mytv.ui.screens.leanback.settings.LeanbackSettingsCategories
+import com.zhuangzhi.mytv.utils.Logger
 
 @Composable
 fun LeanbackSettingsCategoryContent(

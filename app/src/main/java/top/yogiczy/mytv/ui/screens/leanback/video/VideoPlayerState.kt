@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.video
+package com.zhuangzhi.mytv.ui.screens.leanback.video
 
 import android.view.SurfaceView
 import androidx.compose.runtime.Composable
@@ -14,8 +14,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
-import top.yogiczy.mytv.ui.screens.leanback.video.player.LeanbackMedia3VideoPlayer
-import top.yogiczy.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
+import com.zhuangzhi.mytv.ui.screens.leanback.video.player.LeanbackMedia3VideoPlayer
+import com.zhuangzhi.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
 
 /**
  * 播放器状态

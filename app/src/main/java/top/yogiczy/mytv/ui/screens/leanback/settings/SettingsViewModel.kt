@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings
+package com.zhuangzhi.mytv.ui.screens.leanback.settings
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import top.yogiczy.mytv.ui.utils.SP
+import com.zhuangzhi.mytv.ui.utils.SP
 
 class LeanbackSettingsViewModel : ViewModel() {
     private var _appBootLaunch by mutableStateOf(SP.appBootLaunch)

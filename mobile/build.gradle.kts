@@ -11,11 +11,11 @@ android {
     @Suppress("UNCHECKED_CAST")
     apply(extra["appConfig"] as BaseAppModuleExtension.() -> Unit)
 
-    namespace = "top.yogiczy.mytv.mobile"
+    namespace = "com.zhuangzhi.mytv.mobile"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "top.yogiczy.mytv.mobile"
+        applicationId = "com.zhuangzhi.mytv.mobile"
         minSdk = 24
         targetSdk = libs.versions.compileSdk.get().toInt()
         versionCode = 1

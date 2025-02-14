@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.quickpanel
+package com.zhuangzhi.mytv.ui.screens.leanback.quickpanel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -26,20 +26,20 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ButtonDefaults
-import top.yogiczy.mytv.data.entities.EpgProgrammeCurrent
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.rememberLeanbackChildPadding
-import top.yogiczy.mytv.ui.screens.leanback.panel.LeanbackPanelScreenTopRight
-import top.yogiczy.mytv.ui.screens.leanback.panel.PanelAutoCloseState
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvInfo
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelPlayerInfo
-import top.yogiczy.mytv.ui.screens.leanback.panel.rememberPanelAutoCloseState
-import top.yogiczy.mytv.ui.screens.leanback.quickpanel.components.LeanbackQuickPanelIptvChannelsDialog
-import top.yogiczy.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
-import top.yogiczy.mytv.ui.utils.handleLeanbackUserAction
+import com.zhuangzhi.mytv.data.entities.EpgProgrammeCurrent
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.rememberLeanbackChildPadding
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.LeanbackPanelScreenTopRight
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.PanelAutoCloseState
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvInfo
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelPlayerInfo
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.rememberPanelAutoCloseState
+import com.zhuangzhi.mytv.ui.screens.leanback.quickpanel.components.LeanbackQuickPanelIptvChannelsDialog
+import com.zhuangzhi.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackUserAction
 
 @Composable
 fun LeanbackQuickPanelScreen(

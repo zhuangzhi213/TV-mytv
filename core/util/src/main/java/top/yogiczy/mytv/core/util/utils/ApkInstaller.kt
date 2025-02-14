@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.core.util.utils
+package com.zhuangzhi.mytv.core.util.utils
 
 import android.annotation.SuppressLint
 import android.content.Context

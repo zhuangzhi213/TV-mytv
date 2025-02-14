@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.core.data
+package com.zhuangzhi.mytv.core.data
 
 import org.junit.Test
 

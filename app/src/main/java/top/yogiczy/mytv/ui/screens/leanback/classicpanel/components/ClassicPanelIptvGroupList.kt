@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.classicpanel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -34,10 +34,10 @@ import androidx.tv.foundation.lazy.list.items
 import androidx.tv.foundation.lazy.list.rememberTvLazyListState
 import androidx.tv.material3.ListItemDefaults
 import kotlinx.coroutines.flow.distinctUntilChanged
-import top.yogiczy.mytv.data.entities.IptvGroup
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.IptvGroup
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import kotlin.math.max
 
 @OptIn(ExperimentalComposeUiApi::class)

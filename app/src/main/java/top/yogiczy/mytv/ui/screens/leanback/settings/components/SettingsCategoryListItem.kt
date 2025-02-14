@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -20,9 +20,9 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.Icon
 import androidx.tv.material3.ListItemDefaults
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
-import top.yogiczy.mytv.ui.utils.HttpServer
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
+import com.zhuangzhi.mytv.ui.utils.HttpServer
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 
 @Composable
 fun LeanbackSettingsCategoryListItem(

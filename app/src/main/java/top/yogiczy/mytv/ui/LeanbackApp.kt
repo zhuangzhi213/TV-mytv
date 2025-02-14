@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui
+package com.zhuangzhi.mytv.ui
 
 import androidx.annotation.IntRange
 import androidx.compose.foundation.layout.PaddingValues
@@ -19,10 +19,10 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.debounce
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackPadding
-import top.yogiczy.mytv.ui.screens.leanback.main.LeanbackMainScreen
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastScreen
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackPadding
+import com.zhuangzhi.mytv.ui.screens.leanback.main.LeanbackMainScreen
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastScreen
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastState
 
 @Composable
 fun LeanbackApp(

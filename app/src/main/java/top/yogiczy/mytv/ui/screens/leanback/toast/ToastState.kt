@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.toast
+package com.zhuangzhi.mytv.ui.screens.leanback.toast
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -15,7 +15,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.launch
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastProperty.Companion.toMs
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastProperty.Companion.toMs
 import java.util.UUID
 
 @Stable

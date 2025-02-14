@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.panel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.panel.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,14 +18,14 @@ import androidx.tv.foundation.lazy.list.TvLazyRow
 import androidx.tv.foundation.lazy.list.items
 import androidx.tv.foundation.lazy.list.rememberTvLazyListState
 import kotlinx.coroutines.flow.distinctUntilChanged
-import top.yogiczy.mytv.data.entities.Epg
-import top.yogiczy.mytv.data.entities.Epg.Companion.currentProgrammes
-import top.yogiczy.mytv.data.entities.EpgList
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvList
-import top.yogiczy.mytv.ui.rememberLeanbackChildPadding
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.Epg
+import com.zhuangzhi.mytv.data.entities.Epg.Companion.currentProgrammes
+import com.zhuangzhi.mytv.data.entities.EpgList
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.ui.rememberLeanbackChildPadding
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import kotlin.math.max
 import kotlin.math.min
 

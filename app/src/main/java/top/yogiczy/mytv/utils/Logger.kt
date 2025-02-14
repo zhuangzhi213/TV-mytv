@@ -1,7 +1,7 @@
 <<<<<<<< HEAD:app/src/main/java/top/yogiczy/mytv/utils/Logger.kt
-package top.yogiczy.mytv.utils
+package com.zhuangzhi.mytv.utils
 ========
-package top.yogiczy.mytv.core.data.utils
+package com.zhuangzhi.mytv.core.data.utils
 >>>>>>>> ee27a07f525f5a5f2b5114240b2ba6bfabe66f88:core/data/src/main/java/top/yogiczy/mytv/core/data/utils/Logger.kt
 
 import android.util.Log

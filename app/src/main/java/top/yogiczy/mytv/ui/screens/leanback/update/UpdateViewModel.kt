@@ -1,17 +1,17 @@
-package top.yogiczy.mytv.ui.screens.leanback.update
+package com.zhuangzhi.mytv.ui.screens.leanback.update
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import top.yogiczy.mytv.data.entities.GitRelease
-import top.yogiczy.mytv.data.repositories.git.GitRepository
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastProperty
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
-import top.yogiczy.mytv.utils.Downloader
-import top.yogiczy.mytv.utils.Logger
-import top.yogiczy.mytv.utils.compareVersion
+import com.zhuangzhi.mytv.data.entities.GitRelease
+import com.zhuangzhi.mytv.data.repositories.git.GitRepository
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastProperty
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastState
+import com.zhuangzhi.mytv.utils.Downloader
+import com.zhuangzhi.mytv.utils.Logger
+import com.zhuangzhi.mytv.utils.compareVersion
 import java.io.File
 
 class LeanBackUpdateViewModel : ViewModel() {

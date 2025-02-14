@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.components
+package com.zhuangzhi.mytv.ui.screens.leanback.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

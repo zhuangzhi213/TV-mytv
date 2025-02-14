@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "top.yogiczy.mytv.core.data"
+    namespace = "com.zhuangzhi.mytv.core.data"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

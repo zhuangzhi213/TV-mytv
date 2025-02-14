@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.classicpanel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -41,15 +41,15 @@ import androidx.tv.foundation.lazy.list.TvLazyListState
 import androidx.tv.foundation.lazy.list.itemsIndexed
 import androidx.tv.material3.ListItemDefaults
 import kotlinx.coroutines.flow.distinctUntilChanged
-import top.yogiczy.mytv.data.entities.EpgList
-import top.yogiczy.mytv.data.entities.EpgList.Companion.currentProgrammes
-import top.yogiczy.mytv.data.entities.EpgProgramme.Companion.progress
-import top.yogiczy.mytv.data.entities.EpgProgrammeCurrent
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroup
-import top.yogiczy.mytv.data.entities.IptvList
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.EpgList
+import com.zhuangzhi.mytv.data.entities.EpgList.Companion.currentProgrammes
+import com.zhuangzhi.mytv.data.entities.EpgProgramme.Companion.progress
+import com.zhuangzhi.mytv.data.entities.EpgProgrammeCurrent
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroup
+import com.zhuangzhi.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import kotlin.math.max
 
 @Composable

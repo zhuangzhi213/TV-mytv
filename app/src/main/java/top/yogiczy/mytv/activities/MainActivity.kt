@@ -1,9 +1,9 @@
-package top.yogiczy.mytv.activities
+package com.zhuangzhi.mytv.activities
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import top.yogiczy.mytv.ui.utils.SP
+import com.zhuangzhi.mytv.ui.utils.SP
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

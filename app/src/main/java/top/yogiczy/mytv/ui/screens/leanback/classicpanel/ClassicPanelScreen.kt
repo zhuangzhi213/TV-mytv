@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.classicpanel
+package com.zhuangzhi.mytv.ui.screens.leanback.classicpanel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -29,26 +29,26 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
-import top.yogiczy.mytv.data.entities.Epg
-import top.yogiczy.mytv.data.entities.EpgList
-import top.yogiczy.mytv.data.entities.EpgProgramme
-import top.yogiczy.mytv.data.entities.EpgProgrammeList
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroup
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvGroupIdx
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvList
-import top.yogiczy.mytv.data.entities.IptvList
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.rememberLeanbackChildPadding
-import top.yogiczy.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelEpgList
-import top.yogiczy.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelIptvGroupList
-import top.yogiczy.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelIptvList
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackVisible
-import top.yogiczy.mytv.ui.screens.leanback.panel.PanelAutoCloseState
-import top.yogiczy.mytv.ui.screens.leanback.panel.rememberPanelAutoCloseState
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.Epg
+import com.zhuangzhi.mytv.data.entities.EpgList
+import com.zhuangzhi.mytv.data.entities.EpgProgramme
+import com.zhuangzhi.mytv.data.entities.EpgProgrammeList
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroup
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvGroupIdx
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvList
+import com.zhuangzhi.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.rememberLeanbackChildPadding
+import com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelEpgList
+import com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelIptvGroupList
+import com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components.LeanbackClassicPanelIptvList
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackVisible
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.PanelAutoCloseState
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.rememberPanelAutoCloseState
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import kotlin.math.max
 
 @Composable

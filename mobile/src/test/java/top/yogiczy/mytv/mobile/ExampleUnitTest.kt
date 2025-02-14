@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.mobile
+package com.zhuangzhi.mytv.mobile
 
 import org.junit.Test
 

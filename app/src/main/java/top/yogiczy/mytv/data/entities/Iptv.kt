@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.data.entities
+package com.zhuangzhi.mytv.data.entities
 
 import androidx.compose.runtime.Immutable
 

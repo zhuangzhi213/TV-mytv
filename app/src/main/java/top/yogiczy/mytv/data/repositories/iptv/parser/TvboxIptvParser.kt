@@ -1,9 +1,9 @@
-package top.yogiczy.mytv.data.repositories.iptv.parser
+package com.zhuangzhi.mytv.data.repositories.iptv.parser
 
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroup
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroup
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.data.entities.IptvList
 
 class TvboxIptvParser : IptvParser {
 

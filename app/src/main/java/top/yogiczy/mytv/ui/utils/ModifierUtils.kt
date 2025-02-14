@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.utils
+package com.zhuangzhi.mytv.ui.utils
 
 import android.os.Build
 import android.view.KeyEvent

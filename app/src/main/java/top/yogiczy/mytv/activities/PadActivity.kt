@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.activities
+package com.zhuangzhi.mytv.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import top.yogiczy.mytv.ui.theme.PadTheme
+import com.zhuangzhi.mytv.ui.theme.PadTheme
 
 class PadActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

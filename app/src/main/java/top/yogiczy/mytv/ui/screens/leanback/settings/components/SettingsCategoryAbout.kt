@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import android.content.Context
 import android.content.pm.PackageInfo
@@ -19,9 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.material3.Icon
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
 
 @Composable
 fun LeanbackSettingsCategoryAbout(
@@ -51,7 +51,7 @@ fun LeanbackSettingsCategoryAbout(
             var showQrDialog by remember { mutableStateOf(false) }
 
             LeanbackSettingsCategoryListItem(
-                headlineContent = "代码仓库",
+                headlineContent = "开发者网站",
                 trailingContent = {
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(4.dp),
@@ -71,7 +71,7 @@ fun LeanbackSettingsCategoryAbout(
 
             LeanbackQrcodeDialog(
                 text = Constants.APP_REPO,
-                description = "扫码前往代码仓库",
+                description = "扫码前往开发者博客",
                 showDialogProvider = { showQrDialog },
                 onDismissRequest = { showQrDialog = false },
             )

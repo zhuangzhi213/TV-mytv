@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.classicpanel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.classicpanel.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -40,12 +40,12 @@ import androidx.tv.foundation.lazy.list.TvLazyListState
 import androidx.tv.foundation.lazy.list.items
 import androidx.tv.material3.ListItemDefaults
 import kotlinx.coroutines.flow.distinctUntilChanged
-import top.yogiczy.mytv.data.entities.Epg
-import top.yogiczy.mytv.data.entities.EpgProgramme
-import top.yogiczy.mytv.data.entities.EpgProgramme.Companion.isLive
-import top.yogiczy.mytv.data.entities.EpgProgrammeList
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.entities.Epg
+import com.zhuangzhi.mytv.data.entities.EpgProgramme
+import com.zhuangzhi.mytv.data.entities.EpgProgramme.Companion.isLive
+import com.zhuangzhi.mytv.data.entities.EpgProgrammeList
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import java.text.SimpleDateFormat
 import java.util.Locale
 import kotlin.math.max

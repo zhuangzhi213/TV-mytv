@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.core.designsystem
+package com.zhuangzhi.mytv.core.designsystem
 
 import org.junit.Test
 

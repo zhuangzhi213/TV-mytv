@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.main.components
+package com.zhuangzhi.mytv.ui.screens.leanback.main.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -11,15 +11,15 @@ import androidx.compose.runtime.setValue
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvIdx
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvList
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.screens.leanback.video.LeanbackVideoPlayerState
-import top.yogiczy.mytv.ui.screens.leanback.video.rememberLeanbackVideoPlayerState
-import top.yogiczy.mytv.ui.utils.SP
-import top.yogiczy.mytv.utils.Loggable
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvIdx
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvList
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.screens.leanback.video.LeanbackVideoPlayerState
+import com.zhuangzhi.mytv.ui.screens.leanback.video.rememberLeanbackVideoPlayerState
+import com.zhuangzhi.mytv.ui.utils.SP
+import com.zhuangzhi.mytv.utils.Loggable
 import kotlin.math.max
 
 @Stable

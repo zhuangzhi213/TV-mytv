@@ -1,11 +1,11 @@
-package top.yogiczy.mytv.data.repositories.git
+package com.zhuangzhi.mytv.data.repositories.git
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import top.yogiczy.mytv.data.repositories.git.parser.GitReleaseParser
-import top.yogiczy.mytv.utils.Loggable
+import com.zhuangzhi.mytv.data.repositories.git.parser.GitReleaseParser
+import com.zhuangzhi.mytv.utils.Loggable
 
 class GitRepository : Loggable() {
 

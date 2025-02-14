@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.panel
+package com.zhuangzhi.mytv.ui.screens.leanback.panel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -26,24 +26,24 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
-import top.yogiczy.mytv.data.entities.EpgList
-import top.yogiczy.mytv.data.entities.EpgList.Companion.currentProgrammes
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.data.entities.IptvGroupList
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvIdx
-import top.yogiczy.mytv.data.entities.IptvGroupList.Companion.iptvList
-import top.yogiczy.mytv.data.entities.IptvList
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.rememberLeanbackChildPadding
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelChannelNo
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelDateTime
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvFavoriteList
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvGroupList
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvInfo
-import top.yogiczy.mytv.ui.screens.leanback.panel.components.LeanbackPanelPlayerInfo
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
-import top.yogiczy.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.data.entities.EpgList
+import com.zhuangzhi.mytv.data.entities.EpgList.Companion.currentProgrammes
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.data.entities.IptvGroupList
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvIdx
+import com.zhuangzhi.mytv.data.entities.IptvGroupList.Companion.iptvList
+import com.zhuangzhi.mytv.data.entities.IptvList
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.rememberLeanbackChildPadding
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelChannelNo
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelDateTime
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvFavoriteList
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvGroupList
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelIptvInfo
+import com.zhuangzhi.mytv.ui.screens.leanback.panel.components.LeanbackPanelPlayerInfo
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastState
+import com.zhuangzhi.mytv.ui.screens.leanback.video.player.LeanbackVideoPlayer
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
 
 @Composable
 fun LeanbackPanelScreen(

@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,9 +24,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.foundation.lazy.list.itemsIndexed
-import top.yogiczy.mytv.ui.screens.leanback.settings.LeanbackSettingsCategories
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.ui.screens.leanback.settings.LeanbackSettingsCategories
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

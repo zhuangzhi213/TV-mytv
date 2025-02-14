@@ -1,8 +1,8 @@
-package top.yogiczy.mytv.ui.utils
+package com.zhuangzhi.mytv.ui.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import top.yogiczy.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.data.utils.Constants
 
 /**
  * 应用配置存储

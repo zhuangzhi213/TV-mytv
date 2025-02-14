@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.toast
+package com.zhuangzhi.mytv.ui.screens.leanback.toast
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -29,7 +29,7 @@ import androidx.compose.ui.window.Popup
 import androidx.tv.material3.Icon
 import androidx.tv.material3.MaterialTheme
 import kotlinx.coroutines.delay
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
 
 @Composable
 fun LeanbackToastScreen(

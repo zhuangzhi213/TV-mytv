@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.core.util.utils
+package com.zhuangzhi.mytv.core.util.utils
 
 import java.util.regex.Pattern
 

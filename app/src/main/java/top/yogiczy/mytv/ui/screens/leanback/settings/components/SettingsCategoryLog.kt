@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,8 +10,8 @@ import androidx.compose.ui.unit.dp
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.foundation.lazy.list.items
 import kotlinx.collections.immutable.persistentListOf
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.utils.Logger
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.utils.Logger
 import java.text.SimpleDateFormat
 import java.util.Locale
 

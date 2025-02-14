@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.core.designsystem.theme
+package com.zhuangzhi.mytv.core.designsystem.theme
 
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.compositionLocalOf

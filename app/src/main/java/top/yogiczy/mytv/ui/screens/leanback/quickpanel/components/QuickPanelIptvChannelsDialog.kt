@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.quickpanel.components
+package com.zhuangzhi.mytv.ui.screens.leanback.quickpanel.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -36,10 +36,10 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okio.IOException
-import top.yogiczy.mytv.data.entities.Iptv
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
-import top.yogiczy.mytv.utils.isIPv6
+import com.zhuangzhi.mytv.data.entities.Iptv
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.utils.isIPv6
 import kotlin.math.max
 import kotlin.system.measureTimeMillis
 

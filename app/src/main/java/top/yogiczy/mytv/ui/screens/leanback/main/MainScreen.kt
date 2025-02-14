@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.main
+package com.zhuangzhi.mytv.ui.screens.leanback.main
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,14 +33,14 @@ import io.github.alexzhirkevich.qrose.options.QrShapes
 import io.github.alexzhirkevich.qrose.options.circle
 import io.github.alexzhirkevich.qrose.options.roundCorners
 import io.github.alexzhirkevich.qrose.rememberQrCodePainter
-import top.yogiczy.mytv.ui.rememberLeanbackChildPadding
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackVisible
-import top.yogiczy.mytv.ui.screens.leanback.main.components.LeanbackBackPressHandledArea
-import top.yogiczy.mytv.ui.screens.leanback.main.components.LeanbackMainContent
-import top.yogiczy.mytv.ui.screens.leanback.settings.LeanbackSettingsScreen
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.HttpServer
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.ui.rememberLeanbackChildPadding
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackVisible
+import com.zhuangzhi.mytv.ui.screens.leanback.main.components.LeanbackBackPressHandledArea
+import com.zhuangzhi.mytv.ui.screens.leanback.main.components.LeanbackMainContent
+import com.zhuangzhi.mytv.ui.screens.leanback.settings.LeanbackSettingsScreen
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.HttpServer
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 
 @Composable
 fun LeanbackMainScreen(

@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.screens.leanback.settings.components
+package com.zhuangzhi.mytv.ui.screens.leanback.settings.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -32,15 +32,15 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.launch
-import top.yogiczy.mytv.data.repositories.epg.EpgRepository
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
-import top.yogiczy.mytv.ui.screens.leanback.settings.LeanbackSettingsViewModel
-import top.yogiczy.mytv.ui.screens.leanback.toast.LeanbackToastState
-import top.yogiczy.mytv.ui.theme.LeanbackTheme
-import top.yogiczy.mytv.ui.utils.HttpServer
-import top.yogiczy.mytv.ui.utils.SP
-import top.yogiczy.mytv.ui.utils.handleLeanbackKeyEvents
+import com.zhuangzhi.mytv.data.repositories.epg.EpgRepository
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.ui.screens.leanback.components.LeanbackQrcodeDialog
+import com.zhuangzhi.mytv.ui.screens.leanback.settings.LeanbackSettingsViewModel
+import com.zhuangzhi.mytv.ui.screens.leanback.toast.LeanbackToastState
+import com.zhuangzhi.mytv.ui.theme.LeanbackTheme
+import com.zhuangzhi.mytv.ui.utils.HttpServer
+import com.zhuangzhi.mytv.ui.utils.SP
+import com.zhuangzhi.mytv.ui.utils.handleLeanbackKeyEvents
 import kotlin.math.max
 
 @Composable

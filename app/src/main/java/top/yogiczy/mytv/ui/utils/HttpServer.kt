@@ -1,4 +1,4 @@
-package top.yogiczy.mytv.ui.utils
+package com.zhuangzhi.mytv.ui.utils
 
 import android.content.Context
 import android.widget.Toast
@@ -14,14 +14,14 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import top.yogiczy.mytv.AppGlobal
-import top.yogiczy.mytv.R
-import top.yogiczy.mytv.data.repositories.epg.EpgRepository
-import top.yogiczy.mytv.data.repositories.iptv.IptvRepository
-import top.yogiczy.mytv.data.utils.Constants
-import top.yogiczy.mytv.utils.ApkInstaller
-import top.yogiczy.mytv.utils.Loggable
-import top.yogiczy.mytv.utils.Logger
+import com.zhuangzhi.mytv.AppGlobal
+import com.zhuangzhi.mytv.R
+import com.zhuangzhi.mytv.data.repositories.epg.EpgRepository
+import com.zhuangzhi.mytv.data.repositories.iptv.IptvRepository
+import com.zhuangzhi.mytv.data.utils.Constants
+import com.zhuangzhi.mytv.utils.ApkInstaller
+import com.zhuangzhi.mytv.utils.Loggable
+import com.zhuangzhi.mytv.utils.Logger
 import java.io.File
 import java.net.Inet4Address
 import java.net.NetworkInterface
