@@ -52,7 +52,7 @@ fun QuickOpBtnList(
 
         item {
             QuickOpBtn(
-                title = { Text("多线路") },
+                title = { Text("线路列表") },
                 onSelect = onShowChannelUrl,
             )
         }

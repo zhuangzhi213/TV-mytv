@@ -30,7 +30,7 @@ fun ChannelUrlScreen(
         modifier = modifier.captureBackKey { onClose() },
         onDismissRequest = onClose,
         position = DrawerPosition.End,
-        header = { Text("多线路") },
+        header = { Text("线路列表") },
     ) {
         ChannelUrlItemList(
             modifier = Modifier.width(268.dp),

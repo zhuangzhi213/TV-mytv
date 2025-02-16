@@ -30,8 +30,16 @@ object Constants {
     val IPTV_SOURCE_LIST = IptvSourceList(
         listOf(
             IptvSource(
-                name = "默认直播源 琅環书生",
+                name = "默认直播源 琅環书生·自动源",
                 url = "https://tv.zhuangzhi.us.kg/tv.m3u"
+            ),
+            IptvSource(
+                name = "默认直播源 琅環书生·精选源",
+                url = "https://tv.zhuangzhi.us.kg/zz.m3u"
+            ),
+            IptvSource(
+                name = "默认直播源 琅環书生·备用源",
+                url = "https://tv.zhuangzhi.us.kg/by.m3u"
             ),
         )
     )
@@ -47,11 +55,11 @@ object Constants {
     val EPG_SOURCE_LIST = EpgSourceList(
         listOf(
             EpgSource(
-                name = "默认节目单 琅環书生节目单",
+                name = "默认节目单 琅環书生·节目单",
                 url = "http://epg.51zmt.top:8000/e.xml.gz",
             ),
             EpgSource(
-                name = "默认节目单 回看七天",
+                name = "默认节目单 琅環书生·节目单",
                 url = "https://e.erw.cc/all.xml.gz",
             ),
         )
@@ -66,8 +74,8 @@ object Constants {
      * Git最新版本信息
      */
     val GIT_RELEASE_LATEST_URL = mapOf(
-        "stable" to GITHUB_PROXY+"https://raw.githubusercontent.com/minyoad/mytv-android-update/main/tv-stable.json",
-        "beta" to GITHUB_PROXY+"https://raw.githubusercontent.com/minyoad/mytv-android-update/main/tv-beta.json",
+        "stable" to GITHUB_PROXY+"https://update.zhuangzhi.us.kg/tv-stable.json",
+        "beta" to GITHUB_PROXY+"https://update.zhuangzhi.us.kg/tv-beta.json",
     )
 
     /**

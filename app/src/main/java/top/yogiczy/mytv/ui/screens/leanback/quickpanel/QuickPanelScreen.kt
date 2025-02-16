@@ -173,7 +173,7 @@ private fun LeanbackQuickPanelActionMultipleChannels(
     if (currentIptvProvider().urlList.size > 1) {
         var showChannelsDialog by remember { mutableStateOf(false) }
         LeanbackQuickPanelButton(
-            titleProvider = { "多线路" },
+            titleProvider = { "线路列表" },
             onSelect = { showChannelsDialog = true },
         )
         LeanbackQuickPanelIptvChannelsDialog(
