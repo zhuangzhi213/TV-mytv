@@ -74,8 +74,8 @@ object Constants {
      * Git最新版本信息
      */
     val GIT_RELEASE_LATEST_URL = mapOf(
-        "stable" to GITHUB_PROXY+"https://update.zhuangzhi.us.kg/tv-stable.json",
-        "beta" to GITHUB_PROXY+"https://update.zhuangzhi.us.kg/tv-beta.json",
+        "stable" to "https://update.zhuangzhi.us.kg/tv-stable.json",
+        "beta" to "https://update.zhuangzhi.us.kg/tv-beta.json",
     )
 
     /**
